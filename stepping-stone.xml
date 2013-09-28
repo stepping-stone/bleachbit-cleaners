@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2013 stepping stone GmbH
+                       Bern, Switzerland
+                       http://www.stepping-stone.ch
+                       support@stepping-stone.ch
+    
+    Authors:
+      Tiziano Müller <tiziano.mueller@stepping-stone.ch>
+    
+    Licensed under the EUPL, Version 1.1.
+    
+    You may not use this work except in compliance with the
+    Licence.
+    You may obtain a copy of the Licence at:
+    
+    http://www.osor.eu/eupl
+    
+    Unless required by applicable law or agreed to in
+    writing, software distributed under the Licence is
+    distributed on an "AS IS" basis,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+    express or implied.
+    See the Licence for the specific language governing
+    permissions and limitations under the Licence.
+-->
+<cleaner id="stepping-stone">
+  <label>stepping-stone</label>
+  <description>stepping stone GmbH cleaners</description>
+  <option id="online-backup">
+    <label>Logs</label>
+    <description>Remove logs and caches from the OnlineBackup script</description>
+    <action search="walk.all" command="delete" path="/var/lib/OnlineBackup/"/>
+    <action search="file" command="delete" path="/var/log/OnlineBackup.log"/>
+  </option>
+</cleaner>
