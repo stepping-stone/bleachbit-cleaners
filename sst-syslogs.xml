@@ -40,7 +40,7 @@
   <option id="syslog">
     <label>Logs</label>
     <description>Clean syslog logs</description>
-    <action command="delete" search="walk.all" path="/var/log/syslog/"/>
+    <action command="delete" search="walk.all" path="/var/log/syslog/" regex="^(?!\.keep)"/>
     <action command="delete" search="file" path="/var/log/messages"/>
   </option>
   <option id="openrc">
@@ -52,7 +52,7 @@
   <option id="archive">
     <label>Logs</label>
     <description>Clean /var/log/archive</description>
-    <action command="delete" search="walk.all" path="/var/log/archive/"/>
+    <action command="delete" search="walk.all" path="/var/log/archive/" regex="^(?!\.keep)"/>
   </option>
   <option id="portage">
     <label>Logs</label>
