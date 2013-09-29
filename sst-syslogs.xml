@@ -57,19 +57,19 @@
   <option id="portage">
     <label>Logs</label>
     <description>Clean portage-related logs</description>
-    <action command="delete" search="walk.all" path="/var/log/portage/elog/"/>
-    <action command="delete" search="walk.all" path="/var/log/sandbox/"/>
+    <action command="delete" search="walk.all" path="/var/log/portage/elog/" regex="^(?!\.keep)"/>
+    <action command="delete" search="walk.all" path="/var/log/sandbox/" regex="^(?!\.keep)"/>
     <action command="delete" search="glob" path="/var/log/emerge*.log"/>
   </option>
   <option id="puppet">
     <label>Logs</label>
     <description>Clean /var/log/puppet</description>
-    <action command="delete" search="walk.all" path="/var/log/puppet/"/>
+    <action command="delete" search="walk.all" path="/var/log/puppet/" regex="^(?!\.keep)"/>
   </option>
   <option id="zabbix">
     <label>Logs</label>
     <description>Clean /var/log/zabbix</description>
-    <action command="delete" search="walk.all" path="/var/log/zabbix/"/>
+    <action command="delete" search="walk.all" path="/var/log/zabbix/" regex="^(?!\.keep)"/>
   </option>
   <option id="lastlog">
     <label>Logs</label>

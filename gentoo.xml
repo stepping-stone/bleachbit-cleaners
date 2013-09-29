@@ -31,6 +31,6 @@
     <label>Cache</label>
     <description>Cleanup dispatch-conf's config-archive</description>
     <warning>Deleting the config-archive will make dispatch-conf ask again for all files</warning>
-    <action search="walk.all" command="delete" path="/etc/config-archive"/>
+    <action search="walk.all" command="delete" path="/etc/config-archive" regex="^(?!\.keep)"/>
   </option>
 </cleaner>
