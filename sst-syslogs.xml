@@ -24,13 +24,61 @@
     See the Licence for the specific language governing
     permissions and limitations under the Licence.
 -->
-<cleaner id="stepping-stone">
-  <label>stepping-stone</label>
-  <description>stepping stone GmbH cleaners</description>
+<cleaner id="sst-syslogs">
+  <label>stepping stone GmbH syslogs</label>
+  <description>Various stepping stone GmbH specific syslog cleaners</description>
   <option id="online-backup">
     <label>Logs</label>
-    <description>Remove logs and caches from the OnlineBackup script</description>
-    <action search="walk.all" command="delete" path="/var/lib/OnlineBackup/"/>
-    <action search="file" command="delete" path="/var/log/OnlineBackup.log"/>
+    <description>Remove logs from the OnlineBackup script</description>
+    <action command="delete" search="file" path="/var/log/OnlineBackup.log"/>
+  </option>
+  <option id="qemu-ga">
+    <label>Logs</label>
+    <description>Remove qemu guest agent log</description>
+    <action command="delete" search="file" path="/var/log/qemu-ga.log"/>
+  </option>
+  <option id="syslog">
+    <label>Logs</label>
+    <description>Clean syslog logs</description>
+    <action command="delete" search="walk.all" path="/var/log/syslog/"/>
+    <action command="delete" search="file" path="/var/log/messages"/>
+  </option>
+  <option id="openrc">
+    <label>Logs</label>
+    <description>Clean logs created by OpenRC</description>
+    <action command="delete" search="file" path="/var/log/dmesg"/>
+    <action command="delete" search="file" path="/var/log/rc.log"/>
+  </option>
+  <option id="archive">
+    <label>Logs</label>
+    <description>Clean /var/log/archive</description>
+    <action command="delete" search="walk.all" path="/var/log/archive/"/>
+  </option>
+  <option id="portage">
+    <label>Logs</label>
+    <description>Clean portage-related logs</description>
+    <action command="delete" search="walk.all" path="/var/log/portage/elog/"/>
+    <action command="delete" search="walk.all" path="/var/log/sandbox/"/>
+    <action command="delete" search="glob" path="/var/log/emerge*.log"/>
+  </option>
+  <option id="puppet">
+    <label>Logs</label>
+    <description>Clean /var/log/puppet</description>
+    <action command="delete" search="walk.all" path="/var/log/puppet/"/>
+  </option>
+  <option id="zabbix">
+    <label>Logs</label>
+    <description>Clean /var/log/zabbix</description>
+    <action command="delete" search="walk.all" path="/var/log/zabbix/"/>
+  </option>
+  <option id="lastlog">
+    <label>Logs</label>
+    <description>Truncate the lastlog file</description>
+    <action command="truncate" search="file" path="/var/log/lastlog"/>
+  </option>
+  <option id="tallylog">
+    <label>Logs</label>
+    <description>Truncate the tallylog file</description>
+    <action command="truncate" search="file" path="/var/log/tallylog"/>
   </option>
 </cleaner>
