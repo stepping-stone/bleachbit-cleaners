@@ -43,6 +43,11 @@
     <action command="delete" search="walk.all" path="/var/log/syslog/" regex="^(?!\.keep)"/>
     <action command="delete" search="file" path="/var/log/messages"/>
   </option>
+  <option id="uwsgi">
+    <label>Logs</label>
+    <description>Clean uwsgi pre-syslog-switch logs</description>
+    <action command="delete" search="walk.all" path="/var/log/uwsgi/" regex="^(?!\.keep)"/>
+  </option>
   <option id="openrc">
     <label>Logs</label>
     <description>Clean logs created by OpenRC</description>
